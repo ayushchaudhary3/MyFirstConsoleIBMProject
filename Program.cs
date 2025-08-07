@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using MyFirstConsoleIBMProject;
 
-Console.WriteLine("Hello, World!");
-Console.WriteLine("Welcome to C#.NET Programming Fundamentals.");
+//Console.WriteLine("Hello, World!");
+//Console.WriteLine("Welcome to C#.NET Programming Fundamentals.");
 
 //Variable Declaraction
 /*ehh
@@ -83,7 +83,7 @@ static void PersonDetails()
     Console.WriteLine("Please enter your age:");
     //int age = Console.ReadLine() !=null ? int.Parse(Console.ReadLine()) : 0;
     int age = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine($"Hello, {name} from {city}! You are {age} years old.");  
+    Console.WriteLine($"Hello, {name} from {city}! You are {age} years old.");
 }
 
 //LoopDemo();
@@ -95,10 +95,49 @@ static void LoopDemo()
     loop.DoWhileLoop();
 }
 
-StudentAvgMark();
+//StudentAvgMark();
 static void StudentAvgMark()
 {
     StudentMark student = new StudentMark();
     student.InputDetails();
     student.PrintResult();
+}
+
+//TwoDimensionalArrayDemo();
+static void TwoDimensionalArrayDemo()
+{
+    int[,] twoDimensionalArray = new int[3, 3]
+    {
+    { 1, 2, 3 },
+    { 4, 5, 6 },
+    { 7, 8, 9 }
+    };
+
+    for (int i = 0; i < twoDimensionalArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < twoDimensionalArray.GetLength(1); j++)
+        {
+            Console.Write(twoDimensionalArray[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+JaggedArrayDemo();
+
+static void JaggedArrayDemo()
+{
+    int[][] jaggedArray = new int[3][];
+    jaggedArray[0] = new int[] { 1, 2, 3 };
+    jaggedArray[1] = new int[] { 4, 5 };
+    jaggedArray[2] = new int[] { 6, 7, 8, 9 };
+    Console.WriteLine("Jagged Array:");
+    foreach (var row in jaggedArray)
+    {
+        foreach (var item in row)
+        {
+            Console.Write(item + " ");
+        }
+        Console.WriteLine();
+    }
 }
