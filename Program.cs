@@ -167,13 +167,42 @@ static void DataTypesDemo()
     Console.WriteLine($"bool: " + bool.TrueString + " " + bool.FalseString);
 }
 
-ProductDemo();
+//ProductDemo();
 static void ProductDemo()
 {
-    Product product = new Product("Laptop", 1500.00, 5);
-    product.DisplayProductDetails();
-    Console.WriteLine($"Total Price: {product.CalculateTotalPrice()}");
-    double discountPercentage = 10.0; // Example discount percentage
-    Console.WriteLine($"Price after {discountPercentage}% discount: {product.ApplyDiscount(discountPercentage)}");
-    Console.WriteLine($"Is product in stock? {(product.IsInStock() ? "Yes" : "No")}");
+    //constructor
+    //Product product = new Product("Laptop", 55000.00, 30);
+
+    //getter and setter
+    Product product = new Product();
+    product.ProductName = "Laptop";
+    product.ProductPrice = 55000.00;
+    product.ProductQuantity = 30;
+
+    //display product details with getter
+    //product.DisplayProductDetails();
+
+    product.InteractiveMethodMenu();
+}
+
+PersonDetailsDemo();
+static void PersonDetailsDemo()
+{
+    Person person = new Person(1, "John Doe", "New York", 30);
+    person.DisplayPersonDetails();
+    Console.WriteLine($"Person info:{person.GetPersonInfo()}");
+    // Updating person details
+    person.UpdatePersonDetails("Munna", "Bangalore", 28);
+    person.DisplayPersonDetails();
+
+
+    Person person1 = new Person();
+    person1.Id = 2;
+    person1.Name = "Jane Smith";
+    person1.City = "Chennai";
+
+    person1.Age = 25;
+    person1.DisplayPersonDetails();
+    // Using auto-implemented properties
+    Console.WriteLine($"Person info:{person1.GetPersonInfo()}");
 }
