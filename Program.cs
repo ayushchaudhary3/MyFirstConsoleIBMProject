@@ -123,7 +123,7 @@ static void TwoDimensionalArrayDemo()
     }
 }
 
-JaggedArrayDemo();
+//JaggedArrayDemo();
 
 static void JaggedArrayDemo()
 {
@@ -140,4 +140,40 @@ static void JaggedArrayDemo()
         }
         Console.WriteLine();
     }
+}
+
+//EmployeeDemo();
+
+static void EmployeeDemo()
+{
+    Employee emp = new Employee();
+    emp.InputDetails();
+    emp.CalculateSalary();
+    emp.PrintDetails();
+}
+
+//PrimitiveDataTypes
+//DataTypesDemo();
+static void DataTypesDemo()
+{
+    Console.WriteLine($"byte: " + byte.MinValue + " " + byte.MaxValue);
+    Console.WriteLine($"int: " + int.MinValue + " " + int.MaxValue);
+    Console.WriteLine($"short: " + short.MinValue + " " + short.MaxValue);
+    Console.WriteLine($"long: " + long.MinValue + " " + long.MaxValue);
+    Console.WriteLine($"float: " + float.MinValue + " " + float.MaxValue);
+    Console.WriteLine($"double: " + double.MinValue + " " + double.MaxValue);
+    Console.WriteLine($"decimal: " + decimal.MinValue + " " + decimal.MaxValue);
+    Console.WriteLine($"char: " + char.MinValue + " " + char.MaxValue);
+    Console.WriteLine($"bool: " + bool.TrueString + " " + bool.FalseString);
+}
+
+ProductDemo();
+static void ProductDemo()
+{
+    Product product = new Product("Laptop", 1500.00, 5);
+    product.DisplayProductDetails();
+    Console.WriteLine($"Total Price: {product.CalculateTotalPrice()}");
+    double discountPercentage = 10.0; // Example discount percentage
+    Console.WriteLine($"Price after {discountPercentage}% discount: {product.ApplyDiscount(discountPercentage)}");
+    Console.WriteLine($"Is product in stock? {(product.IsInStock() ? "Yes" : "No")}");
 }
