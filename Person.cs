@@ -42,12 +42,11 @@ namespace MyFirstConsoleIBMProject
             Name = name;
             City = city;
             Age = age;
-            Console.WriteLine("Details updated successfully.");
         }
 
         public override string ToString()
         {
-            return $"Person [ID={Id}, Name={Name}, City={City}, Age={Age}]";
+            return $"ID: {Id}, Name: {Name}, City: {City}, Age: {Age}";
         }
     }
 }
