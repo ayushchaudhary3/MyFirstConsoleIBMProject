@@ -268,7 +268,7 @@ static void ConsultingEmployee()
 
 
 //Multilevel Inheritence - Bank Account Demo
-BankAccount();
+//BankAccount();
 static void BankAccount()
 {
     Account acc = null;
@@ -615,3 +615,55 @@ static void SalaryAccountMenu(SalaryAccount salAcc)
     }
 }
 
+//ArtisticDemo();
+static void ArtistDemo()
+{
+    // Creating an instance of the Artist class and prompting for details
+    Artist Artist = new Artist();
+
+    Console.WriteLine("Please enter your Artist ID:");
+    Artist.ArtistId = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your ID:");
+    Artist.Id = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Name:");
+    Artist.Name = Console.ReadLine();
+    Console.WriteLine("Please enter your City:");
+    Artist.City = Console.ReadLine();
+    Console.WriteLine("Please enter your Age:");
+    Artist.Age = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Stage Name:");
+    Artist.StageName = Console.ReadLine();
+    Console.WriteLine("Please enter your Genre:");
+    Artist.Genre = Console.ReadLine();
+    Console.WriteLine("Please enter the number of Albums Released:");
+    Artist.AlbumsReleased = Convert.ToInt32(Console.ReadLine());
+    Artist.DisplayArtistDetails();
+    Console.WriteLine($"Artist Info: {Artist.GetArtistInfo()}");
+    //Artist.UpdateArtistDetails("New Stage Name", "New Genre", 5);
+}
+
+TechnopreneurDemo();
+static void TechnopreneurDemo()
+{
+    Technopreneur technoprenure = new Technopreneur();
+    Console.WriteLine("Please enter your ID:");
+    technoprenure.Id = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Name:");
+    technoprenure.Name = Console.ReadLine();
+    Console.WriteLine("Please enter your City:");
+    technoprenure.City = Console.ReadLine();
+    Console.WriteLine("Please enter your Age:");
+    technoprenure.Age = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Entrepreneur ID:");
+    technoprenure.EntrepreneurId = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Business Name:");
+    technoprenure.BusinessName = Console.ReadLine();
+    Console.WriteLine("Please enter your Business Type:");
+    technoprenure.BusinessType = Console.ReadLine();
+    Console.WriteLine("Please enter your Investment Amount:");
+    technoprenure.InvestmentAmount = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Please enter your Years in Business:");
+    technoprenure.YearsInBusiness = Convert.ToInt32(Console.ReadLine());
+    technoprenure.DisplayEntrepreneurDetails();
+    Console.WriteLine($"Entrepreneur Info: {technoprenure.GetEntrepreneurInfo()}");
+}   

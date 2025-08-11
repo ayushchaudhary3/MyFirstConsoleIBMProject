@@ -3,7 +3,7 @@ using System;
 namespace MyFirstConsoleIBMProject
 {
     // Grandchild Class
-    internal class SalaryAccount : SavingsAccount
+    internal sealed class SalaryAccount : SavingsAccount //sealed to prevent further inheritance    
     {
         public string EmployerName { get; set; }
 
