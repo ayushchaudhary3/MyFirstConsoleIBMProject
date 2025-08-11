@@ -642,7 +642,7 @@ static void ArtistDemo()
     //Artist.UpdateArtistDetails("New Stage Name", "New Genre", 5);
 }
 
-TechnopreneurDemo();
+//TechnopreneurDemo();
 static void TechnopreneurDemo()
 {
     Technopreneur technoprenure = new Technopreneur();
@@ -666,4 +666,88 @@ static void TechnopreneurDemo()
     technoprenure.YearsInBusiness = Convert.ToInt32(Console.ReadLine());
     technoprenure.DisplayEntrepreneurDetails();
     Console.WriteLine($"Entrepreneur Info: {technoprenure.GetEntrepreneurInfo()}");
-}   
+}
+
+//generic collections number demo
+//GenericCollectionsNumber();
+static void GenericCollectionsNumber()
+{
+    GenericCollections GenericCollections = new GenericCollections();
+    Console.WriteLine("How many numbers want to add to the generic list:");
+    int count = Convert.ToInt32(Console.ReadLine());
+    for (int i = 0; i < count; i++)
+    {
+        Console.WriteLine($"Please enter number {i + 1}:");
+        int number = Convert.ToInt32(Console.ReadLine());
+        GenericCollections.AddNumbers(number);
+    }
+    //GenericCollections.AddNumbers(10);
+
+    //Displaying the numbers in the generic list
+    GenericCollections.DisplayNumbers();
+
+    Console.WriteLine("Please enter a number to remove from the list:");
+    int numberToRemove = Convert.ToInt32(Console.ReadLine());
+    GenericCollections.RemoveNumber(numberToRemove);
+    GenericCollections.DisplayNumbers();
+    GenericCollections.ClearNumbers(); // Clear all numbers from the list   
+    GenericCollections.DisplayNumbers(); // Display the list after clearing
+}
+
+//generic collections name demo
+//GenericCollectionsName();
+static void GenericCollectionsName()
+{
+    GenericCollections GenericCollections = new GenericCollections();
+    Console.WriteLine("How many names want to add to the generic list:");
+    int count = Convert.ToInt32(Console.ReadLine());
+    for (int i = 0; i < count; i++)
+    {
+        Console.WriteLine($"Please enter name {i + 1}:");
+        string name = Console.ReadLine();
+        GenericCollections.AddName(name);
+    }
+    //Displaying the names in the generic list
+    GenericCollections.DisplayNames();
+
+    Console.WriteLine("\nPlease enter a name to remove from the list: ");
+    string? nameToRemove = Console.ReadLine();
+
+    GenericCollections.RemoveName(nameToRemove);
+    GenericCollections.DisplayNames();
+}
+
+//generic collections person demo
+GenericCollectionsPerson();
+static void GenericCollectionsPerson()
+{
+    GenericCollections GenericCollections = new GenericCollections();
+    Console.WriteLine("How many persons want to add to the generic list:");
+    int count = Convert.ToInt32(Console.ReadLine());
+    for (int i = 0; i < count; i++)
+    {
+        Console.WriteLine($"Please enter details for person {i + 1}:");
+        Console.WriteLine("Please enter ID:");
+        int id = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Name: ");
+        string name = Console.ReadLine();
+        Console.Write("City: ");
+        string city = Console.ReadLine();
+        Console.Write("Age: ");
+        int age = Convert.ToInt32(Console.ReadLine());
+        //GenericCollections.persons[1].Id = id;
+        //GenericCollections.persons[1].Name = name;
+        //GenericCollections.persons[1].City = city;
+        //GenericCollections.persons[1].Age = age;
+
+        Person person = new Person(id, name, city, age);
+        GenericCollections.AddPerson(person);
+    }
+    //Displaying the persons in the generic list
+    Console.WriteLine("Displaying persons in the generic list:");
+    Console.WriteLine("\nPersons in the list:");
+    foreach (var person in GenericCollections.persons)
+    {
+        person.DisplayPersonDetails();
+    }
+}
