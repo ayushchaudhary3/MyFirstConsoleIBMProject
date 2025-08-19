@@ -718,7 +718,7 @@ static void GenericCollectionsName()
 }
 
 //generic collections person demo
-GenericCollectionsPerson();
+//GenericCollectionsPerson();
 static void GenericCollectionsPerson()
 {
     GenericCollections GenericCollections = new GenericCollections();
@@ -750,4 +750,33 @@ static void GenericCollectionsPerson()
     {
         person.DisplayPersonDetails();
     }
+    Console.WriteLine("\nPlease enter the ID of the person you want to retrieve:");
+    int idToFind = Convert.ToInt32(Console.ReadLine());
+    GenericCollections.GetPersonWithId(idToFind); // Display person's details if ID matches
+}
+
+//Shape<String> shape = new Shape<string>();
+//shape.GetShapeName = "Circle";
+//Console.WriteLine($"Shape Name: {shape.GetShapeName}");
+
+// Shape<T> and Rectangle Demo
+//ShapeRectangle();
+static void ShapeRectangle()
+{
+    Console.Write("Enter Rectangle Length: ");
+    double length = Convert.ToDouble(Console.ReadLine());
+
+    Console.Write("Enter Rectangle Breadth: ");
+    double breadth = Convert.ToDouble(Console.ReadLine());
+
+    // Create Rectangle object
+    Rectangle rect = new Rectangle(length, breadth);
+
+    // Pass Rectangle object to the generic Shape<T> class
+    Shape<Rectangle> shape = new Shape<Rectangle>(rect);
+
+    // Output the rectangle info using Shape Class
+    Console.WriteLine($"\nShape Info: {shape.GetShapeName}");
+    Console.WriteLine($"Area: {shape.GetShapeName.GetArea()}");
+    Console.WriteLine($"Perimeter: {shape.GetShapeName.GetPerimeter()}");
 }

@@ -60,5 +60,17 @@ namespace MyFirstConsoleIBMProject
                 Console.WriteLine($"Name: {person.Name}, Age: {person.Age}"); // Display each person's details
             }
         }
+
+        public void GetPersonWithId(int id)
+        {
+            foreach (var person in persons)
+            {
+                if (person.Id == id)
+                {
+                    Console.WriteLine(person.Id + " " + person.Name + " " + person.Age + " " + person.City); // Display person's details if ID matches
+                    return;
+                }
+            }
+        }
     }
 }
